@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const heavyWork = () => {
   console.log("so heavy work!!!");
-  return ["Hyewon", "woong"];
+  return ["kkama", "Rin"];
 };
 
 const UseState = () => {
