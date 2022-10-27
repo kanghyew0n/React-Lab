@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const heavyWork = () => {
   console.log("so heavy work!!!");
-  return ["kkama", "Rin"];
+  const arr = ["kkama", "Rin"];
+  return arr;
 };
 
 const UseState = () => {
