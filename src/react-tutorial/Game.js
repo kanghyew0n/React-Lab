@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Board from "./Board";
-import Winner from "./Winner";
 
 const Game = () => {
   const [state, setState] = useState({
