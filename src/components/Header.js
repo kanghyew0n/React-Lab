@@ -5,15 +5,11 @@ const Header = () => {
     <HeaderContainer>
       <HeaderInner>
         <Link to="/">
-          <Logo>kanghyew0n</Logo>
+          <Logo>🫧 리액트 실험실 🔬🥼</Logo>
         </Link>
         <Items>
-          <Link to="/state">
-            <li>useState</li>
-          </Link>
-          <Link to="/game">
-            <li>game</li>
-          </Link>
+          <li>메뉴를 클릭해보쟈</li>
+          <li>@kanghyew0n</li>
         </Items>
       </HeaderInner>
     </HeaderContainer>
