@@ -38,5 +38,9 @@ const Items = styled.ul`
   height: 100%;
   align-items: center;
   gap: 32px;
+
+  il {
+    cursor: default;
+  }
 `;
 export default Header;

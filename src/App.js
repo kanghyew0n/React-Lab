@@ -2,13 +2,13 @@
 import "./App.css";
 import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UseState from "./hooks/UseState";
 import Header from "./components/Header";
 import Main from "./Main";
 import Game from "./react-tutorial/Game";
-import UseContext from "./hooks/UseContext";
+import { UseContext, UseState } from "./hooks";
 import { useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
+import TextEditor from "./lib/TextEditor";
 
 function App() {
     const [isDark, setIsDark] = useState(true);
@@ -23,6 +23,7 @@ function App() {
                             <Route path="/state" element={<UseState />} />
                             <Route path="/context" element={<UseContext />} />
                             <Route path="/game" element={<Game />} />
+                            <Route path="/textEditor" element={< TextEditor/>} />
                         </Routes>
                     </Inner>
                 </BrowserRouter>
@@ -32,7 +33,7 @@ function App() {
 }
 
 const AppContainer = styled.div`
-min-height: 100vh;
+    min-height: 100vh;
     background-color: ${(props) => (props.isDark ? "#111" : "#f8f8f8")};
     color: ${(props) => (props.isDark ? "#eee" : "#111")};
 
