@@ -30,6 +30,9 @@ const Main = () => {
                 <Link to="/textEditor">
                     <span>React-Quill</span>
                 </Link>
+                <Link to="/hookForm">
+                    <span>React-Hook-Form</span>
+                </Link>
             </Category>
         </MainContainer>
     );

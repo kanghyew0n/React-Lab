@@ -9,6 +9,7 @@ import { UseContext, UseState } from "./hooks";
 import { useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import TextEditor from "./lib/TextEditor";
+import HookForm from "./lib/HookForm";
 
 function App() {
     const [isDark, setIsDark] = useState(true);
@@ -24,6 +25,7 @@ function App() {
                             <Route path="/context" element={<UseContext />} />
                             <Route path="/game" element={<Game />} />
                             <Route path="/textEditor" element={< TextEditor/>} />
+                            <Route path="/hookForm" element={< HookForm/>} />
                         </Routes>
                     </Inner>
                 </BrowserRouter>
