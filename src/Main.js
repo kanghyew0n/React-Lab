@@ -5,36 +5,39 @@ import styled from "styled-components";
 const Main = () => {
     const [isClick, setIsClick] = useState(false);
     return (
-        <MainContainer>
-            <Category>
-                <Title onClick={() => setIsClick(!isClick)}>
-                    HOOK! {isClick ? "▴" : "▾"}
-                </Title>
-                <Link to="/state">
-                    <span>useState</span>
-                </Link>
-                <Link to="/context">
-                    <span>useContext</span>
-                </Link>
-            </Category>
-            <Category>
-                <Link to="/game">
-                    <Title>GAME!</Title>
-                </Link>
-            </Category>
-            <Category>
-                <Title onClick={() => setIsClick(!isClick)}>
-                    Library! {isClick ? "▴" : "▾"}
-                </Title>
+      <MainContainer>
+        <Category>
+          <Title onClick={() => setIsClick(!isClick)}>
+            HOOK! {isClick ? "▴" : "▾"}
+          </Title>
+          <Link to="/state">
+            <span>useState</span>
+          </Link>
+          <Link to="/context">
+            <span>useContext</span>
+          </Link>
+        </Category>
+        <Category>
+          <Link to="/game">
+            <Title>GAME!</Title>
+          </Link>
+        </Category>
+        <Category>
+          <Title onClick={() => setIsClick(!isClick)}>
+            Library! {isClick ? "▴" : "▾"}
+          </Title>
 
-                <Link to="/textEditor">
-                    <span>React-Quill</span>
-                </Link>
-                <Link to="/hookForm">
-                    <span>React-Hook-Form</span>
-                </Link>
-            </Category>
-        </MainContainer>
+          <Link to="/textEditor">
+            <span>React-Quill</span>
+          </Link>
+          <Link to="/hookForm">
+            <span>React-Hook-Form</span>
+          </Link>
+          <Link to="/dropZone">
+            <span>Drop-zone</span>
+          </Link>
+        </Category>
+      </MainContainer>
     );
 };
 

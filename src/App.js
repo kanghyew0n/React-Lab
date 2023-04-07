@@ -10,27 +10,30 @@ import { useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import TextEditor from "./lib/TextEditor";
 import HookForm from "./lib/HookForm";
+import DropZone from "./lib/DropZone";
+
 
 function App() {
     const [isDark, setIsDark] = useState(true);
     return (
-        <ThemeContext.Provider value={{ isDark, setIsDark }}>
-            <AppContainer isDark={isDark}>
-                <BrowserRouter>
-                    <Header />
-                    <Inner>
-                        <Routes>
-                            <Route path="/" element={<Main />} />
-                            <Route path="/state" element={<UseState />} />
-                            <Route path="/context" element={<UseContext />} />
-                            <Route path="/game" element={<Game />} />
-                            <Route path="/textEditor" element={< TextEditor/>} />
-                            <Route path="/hookForm" element={< HookForm/>} />
-                        </Routes>
-                    </Inner>
-                </BrowserRouter>
-            </AppContainer>
-        </ThemeContext.Provider>
+      <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        <AppContainer isDark={isDark}>
+          <BrowserRouter>
+            <Header />
+            <Inner>
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/state" element={<UseState />} />
+                <Route path="/context" element={<UseContext />} />
+                <Route path="/game" element={<Game />} />
+                <Route path="/textEditor" element={<TextEditor />} />
+                <Route path="/hookForm" element={<HookForm />} />
+                <Route path="/dropZone" element={<DropZone />} />
+              </Routes>
+            </Inner>
+          </BrowserRouter>
+        </AppContainer>
+      </ThemeContext.Provider>
     );
 }
 
