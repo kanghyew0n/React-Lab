@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import styled from "styled-components";
+import IconCloudUpload from "@mui/icons-material/CloudUpload";
 
 function DropZone(props) {
   const [files, setFiles] = useState([]);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    maxFiles: 10,
     accept: {
       "image/*": [],
     },
     onDrop: (acceptedFiles) => {
-      setFiles(
-        [files, ...acceptedFiles.map((file) =>
+      setFiles([
+        files,
+        ...acceptedFiles.map((file) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file),
           })
-        )]
-      );
+        ),
+      ]);
     },
   });
+
+  useEffect(() => {
+    console.log("files : ", files);
+  }, [files]);
 
   const thumbs = files.map((file) => (
     <Thumb key={file.name}>
@@ -39,21 +46,28 @@ function DropZone(props) {
   }, []);
 
   return (
-    <Container>
-      <div {...getRootProps({ className: "dropzone" })}>
-        <input {...getInputProps()} />
-        {isDragActive ? (
-          <div className="dragbox">DRAGGING</div>
-        ) : (
-          <div className="dragbox">
-            Drag 'n' drop some files here, or click to select files
-          </div>
-        )}
-      </div>
+    <>
+      <Container>
+        <div {...getRootProps({ className: "dropzone" })}>
+          <input {...getInputProps()} />
+          {isDragActive ? (
+            <div className="dragbox" style={{ color: "white" }}>
+              <IconCloudUpload />
+              <div>이미지 파일을 드래그하여 놓습니다!!</div>
+            </div>
+          ) : (
+            <div className="dragbox">
+              <IconCloudUpload />
+              <div>이미지 파일을 드래그하여 놓습니다</div>
+            </div>
+          )}
+        </div>
+
+        {console.log("thumbs: ", thumbs)}
+        {console.log("files: ", files)}
+      </Container>
       <ThumbsContainer>{thumbs}</ThumbsContainer>
-      {console.log("thumbs: ", thumbs)}
-      {console.log("files: ", files)}
-    </Container>
+    </>
   );
 }
 
@@ -66,7 +80,16 @@ const Container = styled.div`
   text-align: center;
 
   .dragbox {
-    height: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #999;
+
+    svg {
+      margin-bottom: 10px;
+    }
   }
 `;
 
