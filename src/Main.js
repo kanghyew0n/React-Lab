@@ -36,6 +36,9 @@ const Main = () => {
           <Link to="/dropZone">
             <span>Drop-zone</span>
           </Link>
+          <Link to="/scrolling">
+            <span>scrolling</span>
+          </Link>
         </Category>
       </MainContainer>
     );
