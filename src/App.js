@@ -9,7 +9,7 @@ import { UseContext, UseState } from "./hooks";
 import { useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import TextEditor from "./lib/TextEditor";
-import HookForm from "./lib/HookForm";
+import HookForm from "./lib/hookForm/HookForm";
 import DropZone from "./lib/DropZone";
 import Scrolling from "./lib/Scrolling";
 
