@@ -12,6 +12,7 @@ import TextEditor from "./lib/TextEditor";
 import HookForm from "./lib/hookForm/HookForm";
 import DropZone from "./lib/DropZone";
 import Scrolling from "./lib/Scrolling";
+import CursorFollow from "./Effect/CursorFollow";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -30,6 +31,7 @@ function App() {
               <Route path="/hookForm" element={<HookForm />} />
               <Route path="/dropZone" element={<DropZone />} />
               <Route path="/scrolling" element={<Scrolling />} />
+              <Route path="/cursor-follow" element={<CursorFollow />} />
             </Routes>
           </Inner>
         </BrowserRouter>

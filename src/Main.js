@@ -39,6 +39,9 @@ const Main = () => {
           <Link to="/scrolling">
             <span>scrolling</span>
           </Link>
+          <Link to="/cursor-follow">
+            <span>cursor follow</span>
+          </Link>
         </Category>
       </MainContainer>
     );
