@@ -39,7 +39,7 @@ const Items = styled.ul`
   align-items: center;
   gap: 32px;
 
-  il {
+  li {
     cursor: default;
   }
 `;
