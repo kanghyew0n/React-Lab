@@ -3,15 +3,26 @@ import styled, { keyframes } from "styled-components";
 
 const Scrolling = () => {
   const [itemNum, setItemNum] = useState(0);
-  const [scrollingText, setScrollingText] = useState('kanghyewon')
+  const [scrollingText, setScrollingText] = useState("kanghyewon");
   const itemRef = useRef(null);
 
   useEffect(() => {
-    if (!itemRef) return;
-    let _itemWidth = itemRef.current.offsetWidth;
-    let _containerWidth = window.innerWidth;
-    setItemNum(Math.ceil(_containerWidth / _itemWidth));
-  }, [scrollingText, itemRef, window.innerWidth]);
+    const onChangeWidth = () => {
+      // itemRef를 직접 잡기 보다는 itemRef.current로
+      if (itemRef.current) {
+        let _itemWidth = itemRef.current.offsetWidth;
+        let _containerWidth = window.innerWidth;
+        setItemNum(Math.ceil(_containerWidth / _itemWidth));
+      }
+    };
+
+    onChangeWidth();
+    // window.innerWidth를 useEffect 에서 계속 호출하기 보다, 언마운트 될 때 지워주기
+    window.addEventListener("resize", onChangeWidth);
+    return () => {
+      window.removeEventListener("resize", onChangeWidth);
+    };
+  }, [itemRef, scrollingText]);
 
   return (
     <>
@@ -19,7 +30,7 @@ const Scrolling = () => {
         <span>스크롤링 텍스트를 변경해보세요!</span>
         <input
           type="text"
-          name="scrolling_txt"
+          name="scrolling"
           value={scrollingText}
           onChange={(e) => setScrollingText(e.target.value)}
           placeholder="스크롤링 텍스트"
@@ -55,21 +66,21 @@ const Scrolling = () => {
 
 const scrolling = keyframes`
   from {
-    transform: translate(0, 0);
+    transform: translateX(0);
   }
 
   to {
-    transform: translate(-100%, 0);
+    transform: translateX(-100%);
   }
 `;
 
 const scrolling2 = keyframes`
   from {
-    transform: translate(100%, 0);
+    transform: translateX(100%);
   }
 
   to {
-    transform: translate(0%, 0);
+    transform: translateX(0%);
   }
 `;
 
