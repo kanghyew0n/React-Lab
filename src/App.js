@@ -11,8 +11,8 @@ import { ThemeContext } from "./context/ThemeContext";
 import TextEditor from "./lib/TextEditor";
 import HookForm from "./lib/hookForm/HookForm";
 import DropZone from "./lib/DropZone";
-import Scrolling from "./Custom/Scrolling";
-import CursorFollow from "./Custom/CursorFollow";
+import Scrolling from "./custom/Scrolling";
+import CursorFollow from "./custom/CursorFollow";
 
 function App() {
   const [isDark, setIsDark] = useState(true);

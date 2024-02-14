@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
+import InputWrapper from "../components/common/input/InputWrapper";
+import InputHeadless from "../components/common/input/InputHeadless";
 
 const heavyWork = () => {
   console.log("so heavy work!!!");
@@ -29,6 +31,32 @@ const UseState = () => {
       {names.map((name, idx) => {
         return <p key={idx}>{name}</p>;
       })}
+
+      <InputWrapper
+        id="name"
+        value="hello"
+        type="text"
+        onChange={(e) => console.log(e)}
+      >
+        <InputWrapper.Label>안녕하세요 라벨입니다</InputWrapper.Label>
+        <InputWrapper.Input />
+      </InputWrapper>
+
+      <InputHeadless>
+        {({ value, onChange }) => {
+          return (
+            <div>
+              <label htmlFor="func">func children</label>
+              <InputBox
+                id="func"
+                value={value}
+                type={"text"}
+                onChange={onChange}
+              />
+            </div>
+          );
+        }}
+      </InputHeadless>
     </Container>
   );
 };
@@ -63,6 +91,21 @@ const Container = styled.div`
 
   p {
     margin-top: 10px;
+  }
+`;
+
+const InputBox = styled.input`
+  width: 100%;
+  padding: 15px 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #999;
+  background-color: #000;
+  color: #eee;
+
+  &:focus {
+    border: 1px solid #eee;
+    outline: none;
   }
 `;
 
