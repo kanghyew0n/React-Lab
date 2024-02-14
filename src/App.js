@@ -11,7 +11,7 @@ import { ThemeContext } from "./context/ThemeContext";
 import TextEditor from "./lib/TextEditor";
 import HookForm from "./lib/hookForm/HookForm";
 import DropZone from "./lib/DropZone";
-import Scrolling from "./custom/Scrolling";
+import Scrolling from "./components/Scrolling";
 import CursorFollow from "./components/CursorFollow";
 
 function App() {
