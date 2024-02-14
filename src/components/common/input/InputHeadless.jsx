@@ -5,7 +5,6 @@ const InputHeadless = ({ children }) => {
   const [value, setValue] = useState("");
 
   const handleChangeValue = (e) => {
-    console.log(e.target.value)
     setValue(e.target.value);
   };
   return children({

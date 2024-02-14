@@ -9,7 +9,7 @@ const InputContext = createContext({
   onchange: () => {},
 });
 
-const InputWrapper = ({ id, value, type, onChange,children }) => {
+const InputWrapper = ({ id, value, type, onChange, children }) => {
   const contextValue = { id, value, type, onChange };
   return (
     <InputContext.Provider value={contextValue}>
