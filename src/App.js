@@ -12,7 +12,7 @@ import TextEditor from "./lib/TextEditor";
 import HookForm from "./lib/hookForm/HookForm";
 import DropZone from "./lib/DropZone";
 import Scrolling from "./custom/Scrolling";
-import CursorFollow from "./custom/CursorFollow";
+import CursorFollow from "./components/CursorFollow";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
