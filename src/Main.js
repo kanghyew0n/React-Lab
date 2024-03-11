@@ -60,6 +60,9 @@ const Main = () => {
             <Link to="/cursor-follow">
               <span>Cursor Follow</span>
             </Link>
+            <Link to="/letter">
+              <span>letter</span>
+            </Link>
           </>
         )}
       </Category>

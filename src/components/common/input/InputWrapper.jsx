@@ -1,16 +1,17 @@
-import { useContext } from "react";
-import { createContext } from "react";
-import styled from "styled-components";
+import { useContext } from 'react';
+import { createContext } from 'react';
+import styled from 'styled-components';
 
 const InputContext = createContext({
-  id: "",
-  value: "",
-  type: "text",
+  id: '',
+  value: '',
+  type: 'text',
+  placeholder: '입력해주세욘',
   onchange: () => {},
 });
 
-const InputWrapper = ({ id, value, type, onChange, children }) => {
-  const contextValue = { id, value, type, onChange };
+const InputWrapper = ({ id, value, type, placeholder, onChange, children }) => {
+  const contextValue = { id, value, type, placeholder, onChange };
   return (
     <InputContext.Provider value={contextValue}>
       {children}
@@ -19,10 +20,11 @@ const InputWrapper = ({ id, value, type, onChange, children }) => {
 };
 
 const Input = ({ ...props }) => {
-  const { id, value, type, onChange } = useContext(InputContext);
+  const { id, value, type, placeholder, onChange } = useContext(InputContext);
   return (
     <InputBox
       id={id}
+      placeholder={placeholder}
       value={value}
       type={type}
       onChange={onChange}
@@ -57,5 +59,9 @@ const InputBox = styled.input`
   &:focus {
     border: 1px solid #eee;
     outline: none;
+  }
+
+  &::placeholder {
+    color: #eee;
   }
 `;
