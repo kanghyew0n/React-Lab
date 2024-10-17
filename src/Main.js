@@ -66,6 +66,18 @@ const Main = () => {
           </>
         )}
       </Category>
+      <Category>
+        <Title onClick={(e) => setIsShowCustom(!isShowCustom)}>
+          Component! {isShowCustom ? "▴" : "▾"}
+        </Title>
+        {isShowCustom && (
+          <>
+            <Link to="/check-box">
+              <span>Check Box</span>
+            </Link>
+          </>
+        )}
+      </Category>
     </MainContainer>
   );
 };

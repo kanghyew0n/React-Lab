@@ -14,6 +14,8 @@ import DropZone from "./lib/DropZone";
 import Scrolling from "./components/Scrolling";
 import CursorFollow from "./components/CursorFollow";
 import LettersFilter from "./container/LettersFilter";
+import { AgreementGroup } from "./components/component/Agreement";
+
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -34,6 +36,7 @@ function App() {
               <Route path="/scrolling" element={<Scrolling />} />
               <Route path="/cursor-follow" element={<CursorFollow />} />
               <Route path="/letter" element={<LettersFilter />} />
+              <Route path="/check-box" element={<AgreementGroup />} />
             </Routes>
           </Inner>
         </BrowserRouter>
