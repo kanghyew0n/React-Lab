@@ -75,6 +75,9 @@ const Main = () => {
             <Link to="/check-box">
               <span>Check Box</span>
             </Link>
+            <Link to="/form">
+              <span>Form</span>
+            </Link>
           </>
         )}
       </Category>

@@ -15,6 +15,7 @@ import Scrolling from "./components/Scrolling";
 import CursorFollow from "./components/CursorFollow";
 import LettersFilter from "./container/LettersFilter";
 import { AgreementGroup } from "./components/component/Agreement";
+import { FormControl } from "./components/component/Form";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
               <Route path="/cursor-follow" element={<CursorFollow />} />
               <Route path="/letter" element={<LettersFilter />} />
               <Route path="/check-box" element={<AgreementGroup />} />
+              <Route path="/form" element={<FormControl />} />
             </Routes>
           </Inner>
         </BrowserRouter>
